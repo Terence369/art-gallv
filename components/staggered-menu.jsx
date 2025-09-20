@@ -314,7 +314,7 @@ export const StaggeredMenu = ({
   return (
     <div className="sm-scope w-full h-full">
       <div
-        className={(className ? className + " " : "") + "staggered-menu-wrapper relative w-full h-full z-40"}
+        className={(className ? className + " " : "") + "staggered-menu-wrapper relative w-full h-full min-h-screen z-40"}
         style={accentColor ? { ["--sm-accent"]: accentColor } : undefined}
         data-position={position}
         data-open={open || undefined}
@@ -462,7 +462,7 @@ export const StaggeredMenu = ({
       </div>
 
       <style>{`
-.sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; }
+.sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; min-height: 100vh; z-index: 40; }
 .sm-scope .staggered-menu-header { position: absolute; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 2em; background: transparent; pointer-events: none; z-index: 20; }
 .sm-scope .staggered-menu-header > * { pointer-events: auto; }
 .sm-scope .sm-logo { display: flex; align-items: center; user-select: none; }

@@ -5,6 +5,8 @@ import { ScrollFloat } from "@/components/scroll-float"
 import { FocusCards } from "@/components/ui/focus-cards"
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 import FlyingPosters from "@/components/flying-posters"
+import DomeGallery from "@/components/DomeGallery"
+import SplitText from "@/components/SplitText"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -144,14 +146,20 @@ export default function HomePage() {
       <section className="h-screen relative bg-background overflow-hidden">
         <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4">
           <div className="text-center text-foreground max-w-4xl mx-auto">
-            <ScrollFloat containerClassName="mb-6 sm:mb-8">
+            <ScrollFloat containerClassName="mb-3 sm:mb-4">
               <span className="font-sans font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-balance leading-tight">
                 Immersive Gallery
               </span>
             </ScrollFloat>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed px-4">
-              Experience Jay Karun's artwork in a dynamic 3D space. Scroll to navigate through the floating gallery.
-            </p>
+            <SplitText
+              text="Experience Jay Karun's artwork in a dynamic 3D space. Scroll to navigate through the floating gallery."
+              containerClassName="mb-6 sm:mb-8"
+              textClassName="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed px-4"
+              mode="words"
+              as="p"
+              stagger={0.01}
+              duration={0.7}
+            />
           </div>
         </div>
         <FlyingPosters
@@ -164,6 +172,17 @@ export default function HomePage() {
           cameraZ={25}
           className="absolute inset-0"
         />
+      </section>
+
+      <section className="relative h-[80vh] bg-background overflow-hidden">
+        <div className="absolute inset-0 z-10 flex items-start justify-center pt-8 sm:pt-12">
+          <SplitText
+            text="Dome Gallery Showcase"
+            containerClassName="text-center"
+            textClassName="font-sans font-black text-3xl sm:text-4xl md:text-5xl text-foreground text-balance leading-tight"
+          />
+        </div>
+        <DomeGallery className="absolute inset-0" items={flyingPosterItems} radius={560} tilt={-10} />
       </section>
 
       <section id="gallery" className="py-16 sm:py-20 px-4 bg-card">
