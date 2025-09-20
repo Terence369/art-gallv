@@ -5,6 +5,8 @@ import { ScrollFloat } from "@/components/scroll-float"
 import { FocusCards } from "@/components/ui/focus-cards"
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero"
 import FlyingPosters from "@/components/flying-posters"
+import DomeGallery from "@/components/DomeGallery"
+import SplitText from "@/components/SplitText"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
